@@ -5,9 +5,9 @@ from bson import ObjectId
 app = Flask(__name__)
 
 # Connect to MongoDB
-client = MongoClient("mongodb+srv://admin:989144@clusterx.mke2gdh.mongodb.net/?retryWrites=true&w=majority&appName=ClusterX")
-db = client["school"]
-students = db["students"]
+client = MongoClient("<your mongodb driver url>")
+db = client["<your mongodb database>"]
+students = db["<your collection name>"]
 
 @app.route('/')
 def home():
