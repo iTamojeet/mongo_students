@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>View Students</title>
+  </head>
+  <body>
+    <h2>All Students</h2>
+    {% for student in students %}
+    <div style="border: 1px solid #ccc; padding: 10px; margin: 10px">
+      <strong>Name:</strong> {{ student.name }}<br />
+      <strong>Address:</strong> {{ student.address }}<br />
+      <strong>Email:</strong> {{ student.email }}<br />
+      <strong>Subject Name:</strong> {{ student.subjects.name }}<br />
+      <strong>Author:</strong> {{ student.subjects.author }}<br />
+      <strong>Description:</strong> {{ student.subjects.description }}<br />
+      <a href="/edit/{{ student._id }}">Edit</a> |
+      <a
+        href="/delete/{{ student._id }}"
+        onclick="return confirm('Are you sure?');"
+        >Delete</a
+      >
+    </div>
+    {% endfor %}
+    <button onclick="location.href='/'">Back to Home</button>
+  </body>
+</html>
